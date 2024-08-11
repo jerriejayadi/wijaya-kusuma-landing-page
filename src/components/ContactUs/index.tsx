@@ -124,9 +124,9 @@ export default function ContactUs() {
           <span className="flex-shrink mx-4 text-xs text-Gray">Or contact</span>
           <div className="flex-grow border-t border-Gray"></div>
         </div>
-        <div className={`flex gap-6 mt-8 mx-auto`}>
+        <div className={`flex gap-6 mt-8 justify-center w-full`}>
           <button
-            className={`px-4 py-2 bg-Black  text-white w-full rounded-full flex items-center md:w-fit`}
+            className={`px-4 py-2 bg-Black  text-white justify-center  w-[50%] rounded-full flex items-center md:w-fit`}
           >
             <Image
               className={`aspect-square size-6 shrink-0 object-cover`}
@@ -135,10 +135,10 @@ export default function ContactUs() {
               width={577}
               height={577}
             />
-            <span className={`ml-2`}>Whatsapp</span>
+            <span className={`ml-2 truncate`}>Whatsapp</span>
           </button>
           <button
-            className={`px-4 py-2 bg-Black flex text-white w-full rounded-full md:w-fit`}
+            className={`px-4 py-2 bg-Black flex justify-center text-white w-[50%] rounded-full md:w-fit`}
           >
             <Image
               className={`size-6 shrink-0 object-cover rounded-[100%]`}
