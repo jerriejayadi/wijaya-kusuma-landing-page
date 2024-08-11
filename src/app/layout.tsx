@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html className={`scroll-smooth`} lang="en">
       <body
-        className={`${manrope.className} flex flex-col items-center justify-center w-screen mx-auto scroll-smooth`}
+        className={`${manrope.className} flex flex-col items-center justify-center  scroll-smooth`}
       >
         <Navbar />
         {children}

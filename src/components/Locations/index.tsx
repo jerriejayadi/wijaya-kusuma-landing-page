@@ -14,7 +14,9 @@ export default function Locations() {
         >
           Where to find us?
         </h1>
-        <p className={`font-medium mt-4 text-base md:text-lg md:tracking-wider `}>
+        <p
+          className={`font-medium mt-4 text-base md:text-lg md:tracking-wider `}
+        >
           MARDIREJO RT 001, RT.001/RW.004, Karanganom, Kec. Klaten Utara,
           Kabupaten Klaten, Jawa Tengah 57436
         </p>
@@ -25,7 +27,7 @@ export default function Locations() {
         </button>
       </div>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6663075435663!2d106.82457865874419!3d-6.175408343786172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2db8c5617%3A0x4e446b7ac891d847!2sMonas%2C%20Gambir%2C%20Kecamatan%20Gambir%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sen!2sid!4v1722964393498!5m2!1sen!2sid"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27536.26579004953!2d110.59802112602358!3d-7.698345624831367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a41e081032eaf%3A0xca70a13eb0ea423a!2sUD%20WIJAYA%20KUSUMA!5e0!3m2!1sen!2sid!4v1723332639611!5m2!1sen!2sid"
         className={`aspect-square size-full mt-4 rounded-lg md:max-h-[263px]`}
         allowFullScreen
         loading="lazy"

@@ -1,7 +1,54 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Input from "../Input";
+import emailjs from "@emailjs/browser";
 
+interface FormProps {
+  first_name: string;
+  last_name: string;
+  email: string;
+  message: string;
+}
 export default function ContactUs() {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [form, setForm] = useState<FormProps>({
+    email: "",
+    first_name: "",
+    last_name: "",
+    message: "",
+  });
+  const sendEmail = (e: any) => {
+    setLoading(true);
+    e.persist();
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_8sgiadf",
+        `template_4myi9gl`,
+        form as any,
+        `8Zur_O2qSdVjdbiYO`
+      )
+      .then(
+        (result) => {
+          alert('Successfully sent message to the email')
+          setLoading(false);
+          setForm({
+            email: "",
+            first_name: "",
+            last_name: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.log(error);
+          setLoading(false);
+        }
+      );
+
+    // Clears the form after sending the email
+  };
   return (
     <div className={`bg-white rounded-xl px-4 py-6 max-w-[1280px] mx-auto`}>
       <div>
@@ -15,12 +62,22 @@ export default function ContactUs() {
       <div className={`mt-6 flex flex-col gap-6 max-w-[840px] mx-auto`}>
         <div className={`w-full grid md:grid-cols-2 gap-6`}>
           <Input
+            disabled={loading}
+            onChange={(e) => {
+              setForm((prev) => ({ ...prev, first_name: e.target.value }));
+            }}
+            value={form.first_name}
             label={`First Name`}
             id={`firstName`}
             placeholder={`Input First Name...`}
             className={`px-4 py-3 focus:outline-none border border-[#9F9F9F] placeholder:text-[#9F9F9F] rounded-[4px] mt-2 w-full`}
           />
           <Input
+            disabled={loading}
+            onChange={(e) => {
+              setForm((prev) => ({ ...prev, last_name: e.target.value }));
+            }}
+            value={form.last_name}
             label={`Last Name`}
             id={`lastName`}
             placeholder={`Input Last Name...`}
@@ -28,6 +85,11 @@ export default function ContactUs() {
           />
         </div>
         <Input
+          disabled={loading}
+          onChange={(e) => {
+            setForm((prev) => ({ ...prev, email: e.target.value }));
+          }}
+          value={form.email}
           label={`Email`}
           id={`email`}
           placeholder={`Input Email Address...`}
@@ -38,13 +100,22 @@ export default function ContactUs() {
             Message
           </label>
           <textarea
+            disabled={loading}
+            onChange={(e) => {
+              setForm((prev) => ({ ...prev, message: e.target.value }));
+            }}
+            value={form.message}
             id={`message`}
             placeholder={`We want to collaboration with UD Wijaya Kusuma`}
             className={`px-4 py-3  border border-[#9F9F9F] placeholder:text-[#9F9F9F] rounded-[4px]  w-full resize-none min-h-[209px]`}
           />
         </div>
         <button
-          className={`bg-[#2626BB] py-3 text-white rounded-full font-medium tracking-wide`}
+          disabled={loading}
+          onClick={(e) => {
+            sendEmail(e);
+          }}
+          className={`bg-[#2626BB] disabled:bg-gray-300 py-3 text-white rounded-full font-medium tracking-wide`}
         >
           Send Message
         </button>

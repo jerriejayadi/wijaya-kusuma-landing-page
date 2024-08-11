@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ImageCarousel from "../Carousel";
 
 const IMAGE_LIST = [
   "/images/hero/hero-1.jpeg",
@@ -35,8 +36,12 @@ export default function Hero() {
         </article>
       </div>
       <div className={`order-1 md:order-2 shrink-0 w-full md:w-[50%]`}>
+        <ImageCarousel
+          className="aspect-video max-h-[600px] w-full md:hidden"
+          images={IMAGE_LIST}
+        />
         <Image
-          className={`shrink-0 rounded-lg h-[308px] object-cover`}
+          className={`shrink-0 rounded-lg w-full hidden md:block`}
           alt={``}
           src={`/images/hero/hero-1.jpeg`}
           width={1920}
