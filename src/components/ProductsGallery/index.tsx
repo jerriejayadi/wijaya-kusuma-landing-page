@@ -10,12 +10,12 @@ export default function ProductsGallery() {
         <p
           className={`text-Gray font-medium leading-[18px] md:font-semibold md:tracking-wider`}
         >
-          Gallery Our Product
+          Our Products
         </p>
         <h1
           className={`font-bold text-2xl leading-[36px] mt-2 md:font-bold md:tracking-wide`}
         >
-          Our Bottle Plastic Waste Mangement
+          Gallery Our Product
         </h1>
       </div>
       <div

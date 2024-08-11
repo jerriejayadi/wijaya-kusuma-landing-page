@@ -77,7 +77,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
         </div>
       </div>
 
-      <div className={`flex items-center gap-1 mt-2`}>
+      {/* <div className={`flex items-center gap-1 mt-2`}>
         {images.map((rows, index) => (
           <div
             onClick={() => {
@@ -89,7 +89,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
             } rounded-full`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
