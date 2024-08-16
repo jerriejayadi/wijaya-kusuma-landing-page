@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ImageCarousel from "../Carousel";
+import Link from "next/link";
 
 const IMAGE_LIST = [
   "/images/hero/hero-1.jpeg",
@@ -28,11 +29,19 @@ export default function Hero() {
             <span className={`font-bold`}>UD Wijaya</span> has emerged as a
             reliable and efficient solution.
           </p>
-          <button
-            className={`w-full px-6 py-3 bg-[#2626BB] rounded-[4px] text-white font-medium md:w-fit`}
+          <Link
+            href={`#contact`}
+            className={`w-full flex items-center gap-3 px-6 py-3 bg-[#2626BB] rounded-[4px] text-white font-medium md:w-fit transition-all duration-300 active:brightness-90 md:hover:brightness-90`}
           >
-            Contact Us
-          </button>
+            Contact Us{" "}
+            <Image
+              className={`aspect-square size-8`}
+              alt={``}
+              src={`/icons/WhatsApp_icon.png`}
+              width={1000}
+              height={1000}
+            />
+          </Link>
         </article>
       </div>
       <div className={`order-1 md:order-2 shrink-0 w-full md:w-[50%]`}>

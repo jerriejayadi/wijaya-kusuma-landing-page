@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Input from "../Input";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 
 interface FormProps {
   first_name: string;
@@ -32,7 +33,7 @@ export default function ContactUs() {
       )
       .then(
         (result) => {
-          alert('Successfully sent message to the email')
+          alert("Successfully sent message to the email");
           setLoading(false);
           setForm({
             email: "",
@@ -50,17 +51,23 @@ export default function ContactUs() {
     // Clears the form after sending the email
   };
   return (
-    <div className={`bg-white rounded-xl px-4 py-6 max-w-[1280px] mx-auto`}>
-      <div>
-        <p className={`text-base font-medium tracking-wide text-center`}>
+    <div
+      className={`bg-white rounded-xl px-4 py-6 max-w-[1280px] mx-auto flex flex-col md:flex-row items-center md:p-20`}
+    >
+      <div className={`flex flex-col`}>
+        <p
+          className={`text-base font-medium tracking-wide text-center md:text-left md:text-2xl`}
+        >
           Get In Touch
         </p>
-        <h1 className={`text-center font-bold text-2xl leading-9`}>
+        <h1
+          className={`text-center font-bold text-2xl leading-9 md:text-left md:text-5xl mt-3`}
+        >
           Interested with us?
         </h1>
       </div>
       <div className={`mt-6 flex flex-col gap-6 max-w-[840px] mx-auto`}>
-        <div className={`w-full grid md:grid-cols-2 gap-6`}>
+        {/* <div className={`w-full grid md:grid-cols-2 gap-6`}>
           <Input
             disabled={loading}
             onChange={(e) => {
@@ -123,21 +130,22 @@ export default function ContactUs() {
           <div className="flex-grow border-t border-Gray"></div>
           <span className="flex-shrink mx-4 text-xs text-Gray">Or contact</span>
           <div className="flex-grow border-t border-Gray"></div>
-        </div>
-        <div className={`flex gap-6 mt-8 justify-center w-full`}>
-          <button
-            className={`px-4 py-2 bg-Black  text-white justify-center  w-[50%] rounded-full flex items-center md:w-fit`}
+        </div> */}
+        <div className={`flex gap-6 justify-center w-full`}>
+          <Link
+            href={`https://api.whatsapp.com/send/?phone=%2B6285723723208&text=Hello+i+want+to+collaboration+with+your+company&type=phone_number&app_absent=0`}
+            className={`px-4 py-2 bg-Black  text-white justify-center  w-full rounded-full flex items-center md:w-fit md:text-3xl md:font-bold md:px-6 md:py-4 active:brightness-90 md:hover:brightness-90 transition-all duration-300`}
           >
             <Image
-              className={`aspect-square size-6 shrink-0 object-cover`}
+              className={`aspect-square size-6 md:size-10 shrink-0 object-cover`}
               alt={``}
-              src={`/icons/whatsapp.png`}
-              width={577}
-              height={577}
+              src={`/icons/Whatsapp_Icon.png`}
+              width={1080}
+              height={1080}
             />
             <span className={`ml-2 truncate`}>Whatsapp</span>
-          </button>
-          <button
+          </Link>
+          {/* <button
             className={`px-4 py-2 bg-Black flex justify-center text-white w-[50%] rounded-full md:w-fit`}
           >
             <Image
@@ -148,7 +156,7 @@ export default function ContactUs() {
               height={433}
             />
             <span className={`ml-2`}>Line</span>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

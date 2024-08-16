@@ -45,13 +45,13 @@ export default function Home() {
         />
       </section>
       <section
-        className={`relative max-w-[1240px] px-6 md:px-0 py-6 md:py-20`}
+        className={`relative max-w-[1240px] px-6 md:px-0 py-6 md:py-20 scroll-mt-20`}
         id={`service`}
       >
         <Services />
       </section>
       <section
-        className={`max-w-[1240px] px-6 md:px-0 py-6 md:py-20`}
+        className={`max-w-[1240px] px-6 md:px-0 py-6 md:py-20 scroll-mt-9`}
         id={`product`}
       >
         <Products />
@@ -67,7 +67,7 @@ export default function Home() {
         <ProductsGallery />
       </section>
       <section
-        className={`max-w-[1240px] px-6 md:px-0 py-6 md:py-20`}
+        className={`max-w-[1240px] px-6 md:px-0 py-6 md:py-20 scroll-mt-20`}
         id={`location`}
       >
         <Locations />
